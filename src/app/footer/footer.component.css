@@ -1,0 +1,22 @@
+#desingBy {
+	position: relative;		color: white;
+	bottom: 0; 				height: 4%;
+	width: 100%;			background-color: #263238;
+	padding-top: 0.5rem;
+}	
+
+#social  { height: fit-content; text-align: center; margin-top: 150px}
+#social div { margin-bottom: 2%; }
+#social a { color: white }
+#social a :hover { color: #508cd2;	}
+
+.socialLink { transition: 0.5s; margin-left: 5%	}
+
+#contenedorP{ height:fit-content;margin-top:5% }
+
+@media (max-width: 850px){
+	.container{ padding: 0	}
+	#social{ margin-top: 0 }
+	#derechos p{ font-size: small }
+}
+

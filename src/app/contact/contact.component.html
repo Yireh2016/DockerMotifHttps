@@ -1,0 +1,103 @@
+<app-modal  #modalError></app-modal>
+<app-modal  #modalSuccess></app-modal>
+
+<div class="container" id="contacto" >
+    <div class="container" id="form">
+    	<h3>Contáctanos</h3>
+
+    	<p>
+    		Gracias por tu interés. Por favor, Llena este breve formulario para enviarnos comentarios o dudas acerca de nuestros servicios y te estaremos respondiendo a la mayor brevedad.
+
+    	</p>
+
+    <!--form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)" -->
+    <form  [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)" >
+        <label for="name">Nombre</label>
+
+        <input  type="text"  id="name"   formControlName="name"  placeholder="Su Nombre.."  required >
+        <div class="alert alert-danger" *ngIf="!contactForm.controls['name'].valid && contactForm.controls['name'].dirty && contactForm.controls['name'].touched">
+            Este campo es obligatorio, debe contener su nombre sin espacios
+
+        </div> 
+
+       
+
+        <label for="last">Apellido</label>
+        <input type="text" id="last"    formControlName="last" placeholder="Su apellido.."  required>
+        <div class="alert alert-danger" *ngIf="contactForm.controls['last'].invalid && contactForm.controls['last'].dirty && contactForm.controls['last'].touched">
+            Este campo es obligatorio, debe contener su apellido sin espacios
+        </div>
+       
+
+        <label for="email">Email</label>
+        <input type="text" id="email"    formControlName="email" placeholder="Correo Electrónico.."  required>
+        <div class="alert alert-danger" *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].dirty && contactForm.controls['email'].touched" >
+            <div>
+                No es un correo electrónico válido
+
+               
+            </div>
+        </div>
+        
+
+        <label for="phone">Teléfono</label>
+        <div  class="row">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <select    formControlName="codigoArea" required>
+                    <option>0212</option>
+                    <option>0412</option>
+                    <option>0414</option>
+                    <option>0416</option>
+                    <option>0424</option>
+                    <option>0426</option>
+                    <option>otro</option>
+
+                </select>                
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10">
+                <input   type="text" id="phone"   formControlName="phone" placeholder="Su Número Telefónico.." required >
+                
+            </div>
+        </div>
+
+          <div class="alert alert-danger" *ngIf="contactForm.controls['codigoArea'].invalid && contactForm.controls['codigoArea'].dirty && contactForm.controls['codigoArea'].touched">
+            Debe seleccionar un codigo de area
+        </div>
+
+        <div class="alert alert-danger" *ngIf="contactForm.controls['phone'].invalid && contactForm.controls['phone'].dirty && contactForm.controls['phone'].touched" >
+            <div>
+                No es un teléfono válido, debe contener solo números
+
+               
+            </div>
+        </div>
+
+          
+
+        <label for="comments"  >Comentarios</label>
+        <textarea  id="comments" formControlName="comments"   placeholder="Sus comentarios..." style="height:100px"></textarea>
+
+
+        <!--input type="submit" value="Enviar" [disabled]="!contactForm.valid" data-toggle="modal" data-target=".modal"-->
+        <div *ngIf="!sending">
+            
+            <button  class="btn" [ngClass]="{'btn-primary': contactForm.valid }" type="submit"  [disabled]="!contactForm.valid"><span>Enviar</span>
+            </button>
+
+        </div>
+        <div *ngIf="sending" >Enviando...<img style="height: 10%; width: 10%" id="loadingImg"  src="../assets/img/Loading_icon.gif"></div> 
+    </form>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+

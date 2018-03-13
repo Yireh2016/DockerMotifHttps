@@ -1,0 +1,83 @@
+
+<div class="container" id="about" >
+	
+	<div class="row " id="cardHeader" >
+		
+		
+		<div class="col-xs-12"> 
+			<div class="flechaContainer" clickeable (click)="flip()">
+					
+				<button class="btn btn-danger"><i class="fas fa-redo" aria-hidden="true"></i></button>	
+
+			</div>
+			<div class="flipContainer"(click)="flip()" >
+				
+
+
+				<div class="flipper" [ngClass]="{'rotar':cambio}">
+
+					<div  class="cardFront " [ngClass]="{'cardOnTop':!cambio}">
+						<div id="backImage" style="margin-bottom:2%" ></div>
+						<div class="col-xs-12 col-md-2">
+							
+						</div>
+						<div  class="col-xs-12 col-md-8 contenido style-7">
+							<!--img src="../assets/img/about ejecutivos.jpg"-->
+							<h2>Nuestra Misión</h2>
+							
+							<p>
+								{{cardBack}}
+							</p>
+
+							<div style="     text-align: initial;    margin-top: 20px;    margin-left: 5%; " >
+								<button class="btn btn-danger" style="  margin-top: 0px;    margin-right: 5%;"><a href="/contact">Contáctanos</a> </button>
+								<button class="btn btn-danger" style="  margin-top: 5px; margin-bottom: 5px;"><a href="/services">Nuestros Servicios</a> </button>
+							</div>
+
+						</div>
+
+
+					</div>
+
+					<div   class="cardBack" [ngClass]="{'cardOnTop':cambio}">
+						<div id="imagenContainer" style="margin-bottom:2%">
+							<div   >
+								
+								<img src="../../assets/img/aboutLogo.png">
+							</div>
+							<h1>{{slogan}}</h1>							
+						</div>
+									<div class="col-xs-12 col-md-2">
+							
+						</div>
+						<div  class="col-xs-12 col-md-8 contenido style-7">
+							<h2>Quienes Somos</h2>
+							<p>
+								{{cardFront}}
+							</p>
+
+							<div style="     text-align: initial;    margin-top: 5px;    margin-left: 5%; " >
+								<button class="btn btn-danger" style="  margin-top: 0px;    margin-right: 5%;"><a href="/contact">Contáctanos</a> </button>
+								<button class="btn btn-danger" style="  margin-top: 5px; margin-bottom: 5px;"><a href="/customers">Nuestros Aliados</a> </button>
+							</div>
+							
+	
+							
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+
+
+</div>
+
+
+
+

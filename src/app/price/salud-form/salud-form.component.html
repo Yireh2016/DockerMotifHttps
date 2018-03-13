@@ -1,0 +1,65 @@
+<form  [formGroup]="saludForm" >
+
+
+	
+
+
+        <label for="fecha">Fecha de Nacimiento</label>
+		        <input type="date" id="fecha"    formControlName="fecha" placeholder="Fecha de Nacimiento.."  required>
+		        <div class="alert alert-danger" *ngIf="saludForm.controls['fecha'].invalid && saludForm.controls['fecha'].dirty && saludForm.controls['fecha'].touched" >
+		            <div>
+		                Este campo es obligatorio.          
+		            </div>
+		        </div>
+
+    
+
+ 
+
+      
+
+
+
+
+
+
+
+
+        <!--input type="text" id="edad"    formControlName="edad" placeholder="Edad del pasajero.."  required>
+        <div class="alert alert-danger" *ngIf="saludForm.controls['edad'].invalid && saludForm.controls['edad'].dirty && saludForm.controls['edad'].touched" >
+            <div>
+                Este campo es obligatorio, recuerde que solo debe ingresar números y sin espacios.          
+            </div>
+        </div>
+
+        <div>
+        	<label for="tipoViaje">Tipo de boleto</label><br>
+	        	<input type="radio" name="tipoViaje"  formControlName="tipoViaje" value="ida" > Ida <br>
+	        	<input type="radio" name="tipoViaje" formControlName="tipoViaje" value="vuelta" > Ida y Vuelta <br>        	
+        </div>
+
+        <div *ngIf="saludForm.value.tipoViaje">
+        	
+	        <label for="ida">Fecha de Salida</label>
+		        <input type="date" id="ida"    formControlName="ida"  required>
+		        <div class="alert alert-danger" *ngIf="saludForm.controls['ida'].invalid && saludForm.controls['ida'].dirty && saludForm.controls['ida'].touched" >
+		            <div>
+		                Este campo es obligatorio   
+		            </div>
+		        </div>
+
+        </div>
+
+
+        <div *ngIf="saludForm.value.tipoViaje==='vuelta'">
+
+	        <label for="vuelta">Fecha de Regreso</label>
+		        <input type="date" id="vuelta"    formControlName="vuelta" placeholder="Fecha de regreso.."  required>
+		        <div class="alert alert-danger" *ngIf="saludForm.controls['vuelta'].invalid && saludForm.controls['vuelta'].dirty && saludForm.controls['vuelta'].touched" >
+		            <div>
+		                Este campo es obligatorio, recuerde que solo debe ingresar números y sin espacios.          
+		            </div>
+		        </div>
+        	
+        </div-->
+ </form>

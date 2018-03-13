@@ -1,0 +1,90 @@
+<app-modal-services #modal [servicio]="selectedService"></app-modal-services>
+
+<div style=" display:table; width:100%;  background: #1d2731;    color: #f1f1f1; ">
+
+		<div id="headerImg" class="container" style="margin-top:50px; padding-bottom:2%;">
+			<div style="height: 25vh">
+				
+
+			</div>
+
+			<div class="row" style="height: 30vh">
+
+				<div class="col-sm-2">
+					
+				</div>
+				<div class="col-sm-8 col-xs-12" 
+					style=" min-height:30vh;  
+					background: rgba(95, 158, 160, 0.47);
+					 webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); display:table;"
+>
+					<div style="   
+						display: table-cell;
+    					vertical-align: middle;">
+						<h2 style="    
+							font-style: italic;
+							font-size:xx-large;
+						"><q>La calidad se recuerda mucho después de haber olvidado el precio</q> </h2>		
+						<h4 style="text-align:right;font-size:x-large;" >Frederich Henry Royce</h4>
+						<h5 style="text-align:right;font-size:large;"> Cofundador de Rolls-Royce </h5>
+						
+					</div>
+				</div>
+				<div class="col-sm-2">
+					
+				</div>
+
+			</div>
+			
+
+
+		</div>
+	
+
+
+		<div class=" col-xs-12" style="    min-height: calc(40vh - 50px)">
+			<h1>Bienvenido a nuestra sección de solicitud de cotización</h1>
+
+			<div style=" display: initial;">
+				<h3>Seleccione su opción a continuación: </h3>
+				<select [(ngModel)]="selectedService" style="color: #010101;
+			    min-width: 20vh;
+			    font-size: medium;
+			    height: 30px;
+			    border-style: hidden;">
+					<option *ngFor="let item of servicios">{{item}}</option>
+				</select>  
+
+			</div>
+
+
+
+			<button    style=" margin-left: 10px;" class="btn btn-default" *ngIf="!selectedService" disabled>
+				Cotiza {{selectedService}}
+			</button>
+			<button    style=" margin-left: 10px;" class="btn btn-success" *ngIf="selectedService" (click)="modalForm(selectedService)">
+				Cotiza {{selectedService}}
+			</button>
+
+			<h3>Intrucciones:</h3>
+			<ul *ngFor="let item of intrucciones">
+				<li>{{item}}</li>
+			</ul>
+			<p>NOTA: Usted no está adquiriendo ningún compromiso de compra, solo está solicitando un presupuesto.</p>
+
+			
+
+			
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+	
+

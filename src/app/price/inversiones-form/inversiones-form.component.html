@@ -1,0 +1,17 @@
+
+ <form  [formGroup]="inversionForm"  >
+
+	<label for="edad">Edad</label>
+        <input type="text" id="edad"    formControlName="edad" placeholder="Edad del asegurado.."  required>
+        <div class="alert alert-danger" *ngIf="inversionForm.controls['edad'].invalid && inversionForm.controls['edad'].dirty && inversionForm.controls['edad'].touched" >
+            <div>
+                Este campo es obligatorio, recuerde que solo debe ingresar números y sin espacios.          
+            </div>
+        </div>
+
+       <div>
+        	<label for="tipofumador">Fumador</label><br>
+	        	<input type="radio" name="tipofumador"  formControlName="tipofumador" value="No Fuma" > No fumador <br>
+	        	<input type="radio" name="tipofumador" formControlName="tipofumador" value="Fumador" > Fumador <br>        	
+        </div>
+ </form>

@@ -1,0 +1,140 @@
+<form  [formGroup]="autoForm" >
+
+
+	<label for="cedulaTipo">Número de Cédula</label>
+        <div  class="row">
+            <div class="col-xs-12 col-sm-4 col-md-2">
+                <select    formControlName="cedulaTipo" required>
+                    <option>V</option>
+                    <option>E</option>
+
+                </select>                
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-10">
+                <input   type="text" id="cedula"   formControlName="cedula" placeholder="Su Número de Cédula.." required >
+                
+            </div>
+        </div>
+
+            <div class="alert alert-danger" *ngIf="autoForm.controls['cedula'].invalid && autoForm.controls['cedula'].dirty && autoForm.controls['cedula'].touched" >
+		            <div>
+		                Este campo es obligatorio.          
+		            </div>
+		    </div>
+
+
+
+        <label for="fecha">Fecha de Nacimiento</label>
+		        <input type="date" id="fecha"    formControlName="fecha" placeholder="Fecha de Nacimiento.."  required>
+		        <div class="alert alert-danger" *ngIf="autoForm.controls['fecha'].invalid && autoForm.controls['fecha'].dirty && autoForm.controls['fecha'].touched" >
+		            <div>
+		                Este campo es obligatorio.          
+		            </div>
+		        </div>
+
+    <h2>Datos del Automóvil</h2>
+
+        <div  class="row">
+            <div class="col-xs-12 col-md-6">
+				<label for="marca">Marca</label>
+                <input   type="text" id="marca"   formControlName="marca" placeholder="Ej: Ford" required >
+
+                <div class=" alert alert-danger" *ngIf="autoForm.controls['marca'].invalid && autoForm.controls['marca'].dirty && autoForm.controls['marca'].touched" >
+		            <div>
+		                Este campo es obligatorio.      
+		            </div>
+		    	</div>
+
+            </div>
+
+            <div class="col-xs-12 col-md-6 ">
+				<label for="modelo">Modelo</label>
+                <input   type="text" id="modelo"   formControlName="modelo" placeholder="Ej: Spark" required >
+       		    <div class=" alert alert-danger" *ngIf="autoForm.controls['modelo'].invalid && autoForm.controls['modelo'].dirty && autoForm.controls['modelo'].touched" >
+		            <div>
+		                Este campo es obligatorio.    
+		            </div>
+		    	</div>
+                
+            </div>
+
+         </div>
+
+
+ <div  class="row">
+
+           <div class="col-xs-12 col-md-6">
+            <label for="year">Año</label>
+                <input   type="text" id="year"   formControlName="year" placeholder="Ej: 2005" required >
+
+                <div class=" alert alert-danger" *ngIf="autoForm.controls['year'].invalid && autoForm.controls['year'].dirty && autoForm.controls['year'].touched" >
+		            <div>
+		                Este campo es obligatorio. Solo números en formato aaaa Ej: 1995         
+		            </div>
+		    	</div>
+
+            </div>
+
+            <div class="col-xs-12 col-md-6 ">
+	          	<label for="version">Versión</label>
+
+	                <input   type="text" id="version"   formControlName="version" placeholder="Ej: sedan"  >
+	       		    <div class=" alert alert-danger" *ngIf="autoForm.controls['version'].invalid && autoForm.controls['version'].dirty && autoForm.controls['version'].touched" >
+			            <div>
+			                Este campo es obligatorio.        
+			            </div>
+			    	</div>
+	                
+            </div>
+
+
+ </div>
+
+
+
+        <div>
+        	<label for="tipoCaja">Transmisión</label><br>
+	        	<input type="radio" name="tipoCaja"  formControlName="tipoCaja" value="Automática" > Automática <br>
+	        	<input type="radio" name="tipoCaja" formControlName="tipoCaja" value="Sincrónica" > Sincrónica <br>        	
+        </div>
+
+
+        <!--input type="text" id="edad"    formControlName="edad" placeholder="Edad del pasajero.."  required>
+        <div class="alert alert-danger" *ngIf="autoForm.controls['edad'].invalid && autoForm.controls['edad'].dirty && autoForm.controls['edad'].touched" >
+            <div>
+                Este campo es obligatorio, recuerde que solo debe ingresar números y sin espacios.          
+            </div>
+        </div>
+
+        <div>
+        	<label for="tipoViaje">Tipo de boleto</label><br>
+	        	<input type="radio" name="tipoViaje"  formControlName="tipoViaje" value="ida" > Ida <br>
+	        	<input type="radio" name="tipoViaje" formControlName="tipoViaje" value="vuelta" > Ida y Vuelta <br>        	
+        </div>
+
+        <div *ngIf="autoForm.value.tipoViaje">
+        	
+	        <label for="ida">Fecha de Salida</label>
+		        <input type="date" id="ida"    formControlName="ida"  required>
+		        <div class="alert alert-danger" *ngIf="autoForm.controls['ida'].invalid && autoForm.controls['ida'].dirty && autoForm.controls['ida'].touched" >
+		            <div>
+		                Este campo es obligatorio   
+		            </div>
+		        </div>
+
+        </div>
+
+
+        <div *ngIf="autoForm.value.tipoViaje==='vuelta'">
+
+	        <label for="vuelta">Fecha de Regreso</label>
+		        <input type="date" id="vuelta"    formControlName="vuelta" placeholder="Fecha de regreso.."  required>
+		        <div class="alert alert-danger" *ngIf="autoForm.controls['vuelta'].invalid && autoForm.controls['vuelta'].dirty && autoForm.controls['vuelta'].touched" >
+		            <div>
+		                Este campo es obligatorio, recuerde que solo debe ingresar números y sin espacios.          
+		            </div>
+		        </div>
+        	
+        </div-->
+ </form>

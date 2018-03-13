@@ -1,0 +1,36 @@
+#headerImg{
+	background-image: url("../../assets/img/calidad.jpg");
+	background-size: cover;
+	background-position-x: center;
+	background-position-y:50%;
+	width:100%;
+	min-height: 60vh
+}
+
+.scrolleable{
+	overflow-y: scroll;
+}
+
+.style-7::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+	background-color: white;/*rgba(0,0,0,0.3);#F5F5F5;*/
+	border-radius: 6px;
+}
+
+.style-7::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: white;/*rgba(0,0,0,0.2);/*#F5F5F5;*/
+}
+
+.style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 6px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}

@@ -1,0 +1,112 @@
+ <div >  
+
+    <h2>Datos del Asegurado</h2>
+
+    <form  [formGroup]="defaultForm" (ngSubmit)="onSubmit(defaultForm.value)" >
+        <label for="name">Nombre</label>
+
+        <input  type="text"  id="name"   formControlName="name"  placeholder="Su Nombre.."  required >
+        <div class="alert alert-danger" *ngIf="!defaultForm.controls['name'].valid && defaultForm.controls['name'].dirty && defaultForm.controls['name'].touched">
+            Este campo es obligatorio, debe contener su nombre SIN ESPACIOS. NOTA: Verifique espacios antes y después de su nombre.
+
+        </div> 
+
+       
+
+        <label for="last">Apellido</label>
+        <input type="text" id="last"    formControlName="last" placeholder="Su apellido.."  required>
+        <div class="alert alert-danger" *ngIf="defaultForm.controls['last'].invalid && defaultForm.controls['last'].dirty && defaultForm.controls['last'].touched">
+            Este campo es obligatorio, debe contener su apellido SIN ESPACIOS. NOTA: Verifique espacios antes y después de su apellido.
+        </div>
+       
+
+        <label for="email">Email</label>
+        <input type="text" id="email"    formControlName="email" placeholder="Correo Electrónico.."  required>
+        <div class="alert alert-danger" *ngIf="defaultForm.controls['email'].invalid && defaultForm.controls['email'].dirty && defaultForm.controls['email'].touched" >
+            <div>
+                No es un correo electrónico válido
+
+               
+            </div>
+        </div>
+        
+
+        <div  class="row">
+            <div class="col-xs-12 col-sm-4 ">
+                <label for="codigoArea">Código de Área</label>
+                <select    formControlName="codigoArea" required>
+                    <option>0212</option>
+                    <option>0412</option>
+                    <option>0414</option>
+                    <option>0416</option>
+                    <option>0424</option>
+                    <option>0426</option>
+                    <option>otro</option>
+
+                </select>                
+            </div>
+
+            <div class="col-xs-12 col-sm-8 ">
+                <label for="phone">Teléfono</label>
+                <input   type="text" id="phone"   formControlName="phone" placeholder="Su Número Telefónico.." required >
+                
+            </div>
+        </div>
+
+          <div class="alert alert-danger" *ngIf="defaultForm.controls['codigoArea'].invalid && defaultForm.controls['codigoArea'].dirty && defaultForm.controls['codigoArea'].touched">
+            Debe seleccionar un codigo de area
+        </div>
+
+        <div class="alert alert-danger" *ngIf="defaultForm.controls['phone'].invalid && defaultForm.controls['phone'].dirty && defaultForm.controls['phone'].touched" >
+            <div>
+                No es un teléfono válido, debe contener solo números.   
+            </div>
+        </div>
+
+          
+        <app-auto-form #auto *ngIf="serv2Form==='Auto'" (autoEventValid)="isValid($event)">
+        </app-auto-form>
+        <app-salud-form #salud *ngIf="serv2Form==='Salud'" (saludEventValid)="isValid($event)">
+        </app-salud-form>
+        <app-viaje-form #viaje *ngIf="serv2Form==='Viajes'" (viajeEventValid)="isValid($event)">
+        </app-viaje-form>
+        <app-inversiones-form #inversion *ngIf="serv2Form==='Seguro de Vida'" (inversionEventValid)="isValid($event)">
+        </app-inversiones-form>
+        <app-patrimonio-form #patrimonio *ngIf="serv2Form==='Patrimonios'" (patriEventValid)="isValid($event)">
+        </app-patrimonio-form>      
+
+  
+
+        <!--input type="submit" value="Enviar" [disabled]="!defaultForm.valid" data-toggle="modal" data-target=".modal"-->
+        <div *ngIf="!sending">
+            
+            <button  class="btn" [ngClass]="{'btn-primary': (defaultForm.valid&&valido) }" type="submit"  [disabled]="!((defaultForm.valid&&valido))"><span>Enviar</span>
+            </button>
+
+        </div>
+        <div *ngIf="sending" >Enviando...<img style="height: 10%; width: 10%" id="loadingImg"  src="../assets/img/Loading_icon.gif"></div> 
+
+
+
+        <div class="alert alert-danger" *ngIf="errorSend" style="margin-top:5px;">
+
+            <div >
+                UPS!!!   Hubo un error en el envío de su información, por favor intentelo más tarde o escriba un correo a support@SwordVoice.com reportando lo suscedido.
+
+               
+            </div>
+        </div>
+
+          <div class="alert alert-success" *ngIf="successSend" style="margin-top:5px;" >
+
+            <div >
+                Muy Bien!! Su información ha sido enviado exitosamente. También puede comunicarse a través del WhatsApp  0412-6994625
+
+               
+            </div>
+        </div>
+
+
+
+    </form>
+ </div>

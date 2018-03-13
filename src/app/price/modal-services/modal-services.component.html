@@ -1,0 +1,20 @@
+<div class="modal" id="modalPrice" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content" >
+      <div class="modal-header">
+        <button type="button" (click)="resetear()" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title">Solicitud de Cotización</h2>
+        
+      </div>
+
+      <div class="modal-body">
+        <app-default-form #formulario [serv2Form]="servicio"></app-default-form> 
+
+  			
+      </div>
+      <div class="modal-footer">
+        <button (click)="resetear()"  type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

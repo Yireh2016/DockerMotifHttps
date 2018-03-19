@@ -9,9 +9,9 @@ ADD . /app
 
 #RUN npm install
 
-# Define environment variable
- ENV USER_MAIL=bizarrada@gmail.com 
- ENV SECRET_MAIL=jovocncqkufxtkoq
+# Define environment variable se definien al correr el comando docker run
+
+ 
 
 
 

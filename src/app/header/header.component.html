@@ -29,7 +29,7 @@
       	<div id="barraPrincipal" class="navbar-collapse collapse"  >
           <ul  class="nav navbar-nav navbar-right navbar-toggler-right">
       	    <li *ngFor="let items of navbar"  >
-      	      			<a  routerLinkActive="activeMenu"  href="/{{ items.ruta }}" > {{ items.menu }} </a>
+      	      			<a  routerLinkActive="activeMenu"  href="{{ items.ruta }}" > {{ items.menu }} </a>
                     <!--a  [ngClass]="{'onScrollLetra':isScrolled}"  href="/{{ items.ruta }}"> {{ items.menu }} </a-->
       	    </li>
           </ul>

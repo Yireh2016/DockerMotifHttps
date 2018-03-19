@@ -28,12 +28,13 @@ export class HeaderComponent implements OnInit {
 
 	navbar = [ 
 
-		{menu:'Inicio',ruta:'home'},
-		{menu:'Nosotros',ruta:'about'},
-		{menu:'Servicios',ruta:'services'},
-		{menu:'Cotizaciones',ruta:'price'},
-		{menu:'Clientes',ruta:'customers'},
-		{menu:'Contacto',ruta:'contact'},
+		{menu:'Inicio',ruta:'/home'},
+		{menu:'Nosotros',ruta:'/about'},
+		{menu:'Servicios',ruta:'/services'},
+    {menu:'Blog',ruta:'http://blog.motifseguros.com/'},
+		{menu:'Cotizaciones',ruta:'/price'},
+		{menu:'Clientes',ruta:'/customers'},
+		{menu:'Contacto',ruta:'/contact'},
 		];
 
 
